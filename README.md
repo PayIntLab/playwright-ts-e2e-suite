@@ -1,5 +1,7 @@
 # Playwright TypeScript E2E Suite
 
+[![Playwright TypeScript Tests](https://github.com/PayIntLab/playwright-ts-e2e-suite/actions/workflows/playwright.yml/badge.svg)](https://github.com/PayIntLab/playwright-ts-e2e-suite/actions/workflows/playwright.yml)
+
 A portfolio-ready Playwright + TypeScript test suite covering UI, API, authentication reuse, CI sharding, HTML reports, and Docker.
 
 ## Coverage
