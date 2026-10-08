@@ -4,6 +4,8 @@ A portfolio-ready Playwright + TypeScript test suite covering UI, API, authentic
 
 ## Coverage
 
+![Playwright HTML report](docs/report.png)
+
 | Area                | Tests                                                   |
 | ------------------- | ------------------------------------------------------- |
 | TodoMVC UI          | add, complete, delete, filters, clear completed         |
