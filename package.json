@@ -1,18 +1,25 @@
 {
-  "name": "playwright-ts-demo",
-  "version": "1.0.0",
+  "name": "playwright-ts-e2e-suite",
+  "version": "2.0.0",
   "private": true,
-  "description": "Playwright + TypeScript UI and API test automation demo",
+  "description": "Playwright + TypeScript end-to-end test suite for UI, API, CI, and Docker",
   "scripts": {
     "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:api": "playwright test --grep @api",
+    "test:ui": "playwright test --grep @ui",
     "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
+    "test:ui-mode": "playwright test --ui",
+    "test:shard": "playwright test --shard=${SHARD:-1/2}",
     "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "report": "playwright show-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.64.0",
     "@types/node": "^24.0.0",
+    "prettier": "^3.6.0",
     "typescript": "^5.9.0"
   }
 }

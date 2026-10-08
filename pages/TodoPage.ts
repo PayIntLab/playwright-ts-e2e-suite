@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { expect, type Locator, type Page } from "@playwright/test";
 
 export class TodoPage {
   readonly page: Page;
@@ -7,28 +7,28 @@ export class TodoPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.newTodo = page.locator('input.new-todo');
-    this.todoItems = page.locator('.todo-list li');
+    this.newTodo = page.locator("input.new-todo");
+    this.todoItems = page.locator(".todo-list li");
   }
 
   async goto(): Promise<void> {
-    await this.page.goto('https://demo.playwright.dev/todomvc/');
+    await this.page.goto("https://demo.playwright.dev/todomvc/");
   }
 
   async addTodo(title: string): Promise<void> {
     await this.newTodo.fill(title);
-    await this.newTodo.press('Enter');
+    await this.newTodo.press("Enter");
   }
 
   async completeTodo(title: string): Promise<void> {
     const item = this.todoItems.filter({ hasText: title });
-    await item.locator('.toggle').check();
+    await item.locator(".toggle").check();
   }
 
   async deleteTodo(title: string): Promise<void> {
     const item = this.todoItems.filter({ hasText: title });
     await item.hover();
-    await item.locator('.destroy').click();
+    await item.locator(".destroy").click();
   }
 
   async expectTodoVisible(title: string): Promise<void> {
